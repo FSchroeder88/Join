@@ -1,0 +1,87 @@
+mat-stepper {
+    padding: 30px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+::ng-deep .mat-step-header {
+    border-radius: 5px;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container {
+    margin-bottom: 30px;
+}
+
+mat-progress-bar {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.mt-30 {
+    margin-top: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        position: fixed;
+        top: 100px;
+        left: 20px;
+    }
+
+    .title-description {
+        position: fixed;
+        top: 150px;
+        left: 20px;
+    }
+
+    .text-center {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 535px;
+    }
+
+    mat-progress-bar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 530px;
+        margin: auto;
+        width: 95%;
+    }
+
+    mat-stepper {
+        position: fixed;
+        top: 200px;
+        left: 0;
+        right: 0;
+        width: 85%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    mat-stepper {
+        width: 98%;
+        padding-left: unset;
+        padding-right: unset;
+    }
+}

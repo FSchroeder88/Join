@@ -1,0 +1,47 @@
+<main>
+
+    <nav>
+
+        <img src="assets/logo-hell.svg">
+
+        <div class="register-button">
+            <p>Not a Join user?</p>
+            <button class="signup-btn" routerLink="/signup">Sign Up</button>
+        </div>
+
+    </nav>
+
+    <div class="form-div">
+
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+
+            <h1>Log in</h1>
+
+            <mat-form-field>
+                <input matInput placeholder="Username" formControlName="username">
+                <mat-error *ngIf="username?.errors?.['required']">Username is required</mat-error>
+                <mat-error *ngIf="username?.errors?.['minlength']">Username must have 4 characters at least</mat-error>
+                <mat-error *ngIf="username?.errors?.['maxlength']">Username cannot have more than 20 characters
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Password" formControlName="password" type="password">
+                <mat-error *ngIf="password?.errors?.['required']">Password is required</mat-error>
+                <mat-error *ngIf="password?.errors?.['pattern']">Password must contain at least 8 characters, including
+                    lowercase and uppercase letters, numbers and special characters.</mat-error>
+            </mat-form-field>
+
+            <div class="buttons-div">
+                <button class="login-btn" type="submit" [disabled]="!loginForm.valid"
+                    [class.disabled-btn]="!loginForm.valid">
+                    Log in
+                </button>
+                <button class="guest-login-btn" type="button" (click)="loginAsGuest()">Guest Log in</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</main>

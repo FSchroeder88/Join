@@ -1,0 +1,257 @@
+.recently-created {
+    background-color: #e4b2b2 !important;
+}
+
+.searched {
+    background-color: #2a3647;
+    color: white;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+.list-container {
+    margin-right: 20px;
+    width: calc(25% - 20px);
+    display: inline-block;
+    vertical-align: top;
+}
+
+.list-container-last {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.list-1,
+.list-2,
+.list-3,
+.list-4 {
+    min-height: 60px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    border: solid 1px white;
+}
+
+.box-1,
+.box-2,
+.box-3,
+.box-4 {
+    padding: 20px 10px;
+    color: black;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    font-size: 14px;
+    height: 72px;
+    margin: 0;
+    border-bottom: solid 1px white;
+}
+
+.box-1 {
+    background-color: #e5dada;
+}
+
+.box-2 {
+    background-color: lemonchiffon;
+}
+
+.box-3 {
+    background-color: #c5dbe5;
+}
+
+.box-4 {
+    background-color: #c2e6c2;
+}
+
+.empty {
+    background-color: rgba(0, 0, 0, 0.15) !important;
+    border: none !important;
+    height: 72px;
+}
+
+.task-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.currently-empty-span {
+    position: absolute;
+    top: 26px;
+    left: 10px;
+}
+
+.priority-icon-container {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    margin-left: 2.5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+
+    img {
+        width: 75%;
+        padding: 2.5px;
+    }
+}
+
+.menu-btn {
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 225ms ease-in-out;
+    padding: 4px;
+
+    &:hover {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}
+
+.item-btn {
+    display: flex;
+    align-items: center;
+}
+
+.info {
+    transition: 225ms ease-in-out;
+
+    &:hover {
+        mat-icon {
+            color: #3f51b5;
+        }
+    }
+}
+
+.edit {
+    transition: 225ms ease-in-out;
+
+    &:hover {
+        mat-icon {
+            color: black;
+        }
+    }
+}
+
+.delete {
+    transition: 225ms ease-in-out;
+
+    &:hover {
+        mat-icon {
+            color: #f44336;
+        }
+    }
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.box-1:last-child,
+.box-2:last-child,
+.box-3:last-child,
+.box-4:last-child {
+    border: none;
+}
+
+.list-1.cdk-drop-list-dragging,
+.list-2.cdk-drop-list-dragging,
+.list-3.cdk-drop-list-dragging,
+.list-4.cdk-drop-list-dragging,
+.box-1:not(.cdk-drag-placeholder),
+.box-2:not(.cdk-drag-placeholder),
+.box-3:not(.cdk-drag-placeholder),
+.box-4:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+mat-expansion-panel {
+    margin-top: 1rem;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    .section-header {
+        // justify-content: center;
+    }
+
+    .list-container {
+        margin-top: 25px;
+    }
+
+    .mb-48 {
+        margin-bottom: 48px;
+    }
+
+    .mbt-48 {
+        margin-bottom: 48px;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .list-container-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-container {
+        width: calc(80% - 20px);
+    }
+
+    main {
+        position: fixed;
+        left: 0px;
+        top: 80px;
+        margin: 2px;
+        height: 82%;
+        padding: 7px;
+        padding-bottom: -1px;
+        width: auto;
+        overflow-y: scroll;
+    }
+
+    .section-header {
+        flex-direction: column;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2rem;
+    }
+}

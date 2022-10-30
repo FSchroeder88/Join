@@ -1,0 +1,66 @@
+<mat-drawer-container class="example-container" autosize>
+
+    <mat-toolbar *ngIf="checkNotLoginOrSignup()" class="mat-elevation-z6">
+
+        <button id="burger-button" mat-icon-button (click)="drawer.toggle()"
+            matTooltip="Click to open/close the sidebar menu" [matTooltipPosition]="'after'">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="logout(); drawer.close()" matTooltip="Click to log out"
+            [matTooltipPosition]="'before'">
+            <mat-icon>logout</mat-icon>
+        </button>
+
+    </mat-toolbar>
+
+    <mat-drawer #drawer mode="side" [opened]="checkNotLoginOrSignup()">
+
+        <nav>
+
+            <div class="sidebar-top">
+
+                <img class="logo" src="assets/logo-dunkel.svg">
+
+                <div class="anchor-tags-main-div">
+
+                    <div routerLink="/summary" routerLinkActive="active">
+                        <img src="assets/summary-logo.svg">
+                        <span>Summary</span>
+                    </div>
+
+                    <div routerLink="/board" routerLinkActive="active">
+                        <img src="assets/board-logo.svg">
+                        <span>Board</span>
+                    </div>
+
+                    <div routerLink="/add-task" routerLinkActive="active">
+                        <img src="assets/add-task-logo.svg">
+                        <span>Add Task</span>
+                    </div>
+
+                    <div routerLink="/contacts" routerLinkActive="active">
+                        <img src="assets/contacts-logo.svg">
+                        <span>Contacts</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="legal-notice-div" routerLink="/legal-notice" routerLinkActive="active">
+                <img src="assets/legal-notice-logo.svg">
+                <span>Legal Notice</span>
+            </div>
+
+        </nav>
+
+    </mat-drawer>
+
+    <div [class.p-30]="checkNotLoginOrSignup()">
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</mat-drawer-container>

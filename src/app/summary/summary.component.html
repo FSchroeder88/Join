@@ -1,0 +1,111 @@
+<div class="summary-content">
+
+    <div class="summary-headline">
+        <h1 class="font-size-big">Summary</h1>
+        <p>Everything in a nutshell!</p>
+    </div>
+
+    <div class="summary-main-container">
+
+        <div class="summary-left-container">
+
+            <div class="summary-container1">
+
+                <mat-card class="mr-1" routerLink="/board">
+
+                    <div class="board-info">
+                        <h1>{{ tasks.length ? tasks.length : 0}}</h1>
+                        <p>Tasks <br>In Board</p>
+                    </div>
+
+                </mat-card>
+
+                <mat-card class="mr-1" routerLink="/board">
+
+                    <div class="board-info">
+                        <h1>{{ inProgress.length ? inProgress.length : 0}}</h1>
+                        <p>Tasks <br>In Progress</p>
+                    </div>
+
+                </mat-card>
+
+                <mat-card routerLink="/board">
+
+                    <div class="board-info">
+                        <h1>{{ awaitingFeedback.length ? awaitingFeedback.length : 0 }}</h1>
+                        <p>Tasks <br>Awaiting Feedback</p>
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+            <div class="summary-container2">
+
+                <mat-card class="middle-card" routerLink="/board">
+
+                    <div class="middle-card-left">
+
+                        <div id="circle-red">
+                            <img src="assets\img\up-arrow-white.png">
+                        </div>
+
+                        <div class="subcontainer-left">
+                            <h1>{{ tasksWithHighPriority.length ? tasksWithHighPriority.length : 0 }}</h1>
+                            <p>Tasks with <span>high</span> priority</p>
+                        </div>
+
+                    </div>
+
+                    <div class="board-date">
+                        <p>Task with the closest deadline:</p>
+                        <p><b>"{{ tasksOrderedbyCompletionDate.length ? tasksOrderedbyCompletionDate[0].title : "none"
+                                }}"</b></p>
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+            <div class="summary-container3">
+
+                <mat-card class="todo-card mr-1" routerLink="/board">
+
+                    <div id="circle">
+                        <img src="assets\img\pencil-48.png">
+                    </div>
+
+                    <div class="subcontainer-right">
+                        <h1>{{ toDo.length ? toDo.length : 0}}</h1>
+                        <p>To Do</p>
+                    </div>
+
+                </mat-card>
+
+                <mat-card class="todo-card" routerLink="/board">
+
+                    <div id="circle">
+                        <img src="assets\img\check-mark-3-48.png">
+                    </div>
+
+                    <div class="subcontainer-right">
+                        <h1>{{ done.length ? done.length : 0}}</h1>
+                        <p>Done</p>
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+        </div>
+
+        <div class="welcome-name">
+
+            <h1>👋 Welcome to Join,</h1>
+            <h1 style="color: #29abe2">{{ authService.getCurrentUser().user.username }}</h1>
+
+        </div>
+
+    </div>
+
+</div>
