@@ -8,9 +8,9 @@ import { User } from 'src/models/user';
 })
 export class UserService {
 
-  private baseUrl: string = "https://vicentbotellaferragud.pythonanywhere.com/users/";
+  private baseUrl: string = "https://join-api.de/users/";
 
-  private registrationUrl: string = "https://vicentbotellaferragud.pythonanywhere.com/users/register/";
+  private registrationUrl: string = "https://join-api.de/users/register/";
 
   constructor(private http: HttpClient) { }
 

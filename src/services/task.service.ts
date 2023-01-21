@@ -39,7 +39,7 @@ export class AuthInterceptor implements HttpInterceptor {
 })
 export class TaskService {
 
-  private baseUrl: string = "https://vicentbotellaferragud.pythonanywhere.com/tasks/";
+  private baseUrl: string = "https://join-api.de/tasks/";
 
   constructor(private http: HttpClient) { }
 

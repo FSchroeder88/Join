@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   public currentUserPlusToken!: UserPlusToken;
 
-  private loginUrl: string = "https://vicentbotellaferragud.pythonanywhere.com/users/login/";
+  private loginUrl: string = "https://join-api.de/users/login/";
 
   constructor(private router: Router, private http: HttpClient) { }
 
